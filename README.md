@@ -57,3 +57,17 @@ Foto Ciclo de Machine Learning
 
 
 
+
+
+## 🪒 Model Selection: Occam's Razor
+
+
+In Machine Learning, we strictly adhere to the principle of **Occam's Razor** (*lex parsimoniae*), which states that "entities should not be multiplied beyond necessity." 
+
+When applied to data science and statistical modeling, this means that if two algorithms achieve similar performance or predictive accuracy, we must **always choose the simpler one**. 
+
+Why do we prioritize simplicity?
+* **Prevents Overfitting:** Complex models with too many parameters tend to memorize the training data (including the noise) rather than learning the actual underlying patterns (the signal).
+* **Interpretability:** A simpler model (like Linear Regression or a shallow Decision Tree) is much easier to explain to business stakeholders than a complex "black-box" algorithm (like a deep Neural Network).
+* **Computational Efficiency:** Simpler models require less processing power, memory, and time to train and deploy in production environments.
+# 🛠️ Data Preparation & Preprocessing
