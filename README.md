@@ -71,3 +71,27 @@ Why do we prioritize simplicity?
 * **Interpretability:** A simpler model (like Linear Regression or a shallow Decision Tree) is much easier to explain to business stakeholders than a complex "black-box" algorithm (like a deep Neural Network).
 * **Computational Efficiency:** Simpler models require less processing power, memory, and time to train and deploy in production environments.
 # 🛠️ Data Preparation & Preprocessing
+## 🐼 Pandas & Data Prep Cheat Sheet
+
+Throughout this project, we rely on core Pandas functions to load, inspect, and manipulate our tabular data before feeding it to our Machine Learning algorithms:
+
+### 1. Data Loading & Setup
+* **`pd.read_csv('ruta/archivo.csv')`**: The fundamental command to ingest raw data from a CSV file and convert it into a structured Pandas DataFrame.
+* **`%matplotlib inline`**: A Jupyter "magic command" that ensures all our data visualizations and plots render directly inside the notebook below our code cells.
+
+### 2. Macroscopic Inspection
+Before manipulating data, we must understand its shape and health:
+* **`df.shape`**: Returns a mathematical tuple `(rows, columns)` indicating the exact dimensions of our dataset.
+* **`df.info()`**: A critical diagnostic tool. It shows every column, its data type (`float64`, `object`, etc.), and exactly how many non-null values exist, allowing us to spot missing data instantly.
+* **`df.head()`**: Displays the first 5 rows to visually verify that the data loaded correctly.
+* **`df.columns`** and **`df.index`**: Return the names of the features (columns) and the range of our examples (rows).
+
+### 3. Slicing & Indexing (Matrix Manipulation)
+To extract specific sub-matrices or vectors from our dataset, we use the `.loc` indexer:
+* **`df.loc[fila, :]`**: Extracts an entire row (a single observation/example).
+* **`df.loc[:, 'columna']`**: Extracts an entire column (a single feature).
+
+### 4. Advanced Filtering (Feature Selection)
+To separate numerical features from text (categorical) features, we map the data types to boolean conditions and use list comprehensions:
+* **`(df.dtypes == float) | (df.dtypes == int)`**: Creates a boolean mask identifying which columns contain numerical data suitable for mathematical algorithms.
+* **`[c for c in mascara.index if mascara[c]]`**: A pythonic list comprehension to extract only the column names that evaluated to `True` in our mask.
